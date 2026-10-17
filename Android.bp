@@ -1,0 +1,57 @@
+// Auto-generated prebuilt APEX Blueprint for external/elfutils
+// Staged from Extractive APEX package: ext-elfutils (org.blisslabs.ag.ext.elfutils)
+
+package {
+    default_applicable_licenses: ["external_elfutils_license"],
+}
+
+license {
+    name: "external_elfutils_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-BSD",
+        "SPDX-license-identifier-GFDL",
+        "SPDX-license-identifier-GPL-2.0-or-later",
+        "SPDX-license-identifier-GPL-3.0-or-later",
+        "SPDX-license-identifier-LGPL-3.0-or-later",
+    ],
+    license_text: [
+        "COPYING",
+        "COPYING-GPLV2",
+        "COPYING-LGPLV3",
+        "NOTICE",
+    ],
+}
+
+cc_defaults {
+    name: "elfutils_transitive_defaults",
+    static_libs: [
+        "libz",
+        "libzstd",
+    ],
+}
+
+cc_library_headers {
+    name: "elfutils_headers",
+    host_supported: true,
+    native_bridge_supported: true,
+    vendor_available: true,
+    export_include_dirs: [
+        ".",
+        "include",
+        "lib",
+        "bionic-fixup",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+cc_prebuilt_library_static {
+    name: "libelf",
+    srcs: ["lib/libelf.a"],
+    export_include_dirs: ["include", "libelf"],
+    host_supported: true,
+    native_bridge_supported: true,
+    vendor_available: true,
+    defaults: ["elfutils_transitive_defaults"],
+}

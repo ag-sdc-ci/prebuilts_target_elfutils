@@ -1,0 +1,13 @@
+{
+	"provideLibs": [	
+		    "libdummy_binary_libelf.a-x86_64-v2.so",
+		    "libdummy_binary_libelf.a.so",
+		    "libdummy_ext_elfutils-x86_64-v2.so",
+		    "libdummy_ext_elfutils.so",
+		    "libdummy_headers_ext_elfutils-x86_64-v2.so",
+		    "libdummy_headers_ext_elfutils.so",
+		    "libdummy_shared_elfutils-x86_64-v2.so",
+		    "libdummy_shared_elfutils.so"
+	],
+	"visible": true
+}
